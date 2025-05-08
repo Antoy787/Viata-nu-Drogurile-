@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viața, nu Drogurile - Resurse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <h1><i class="fas fa-cannabis"></i> Viața, nu Drogurile</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="despre.html">Despre</a></li>
+                <li><a href="informatii.html">Informații</a></li>
+                <li><a href="resurse.html" class="active">Resurse</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Resurse</h1>
+        </section>
+
+        <section class="info-container">
+            <div class="info-section">
+                <h2 class="centered-title">Programe de Recuperare</h2>
+                <div class="effects-container">
+                    <div class="effect-box">
+                        <i class="fas fa-heart"></i>
+                        <h3>Programe de Reabilitare</h3>
+                        <ul>
+                            <li>Programe de detoxificare medicală</li>
+                            <li>Terapie individuală și de grup</li>
+                            <li>Suport pentru familie</li>
+                            <li>Programe de reintegrare socială</li>
+                        </ul>
+                    </div>
+
+                    <div class="effect-box">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Suport Continuu</h3>
+                        <ul>
+                            <li>Consiliere post-recuperare</li>
+                            <li>Grupuri de suport pentru abstinență</li>
+                            <li>Programe de mentorat</li>
+                            <li>Asistență în găsirea locurilor de muncă</li>
+                        </ul>
+                    </div>
+
+                    <div class="effect-box">
+                        <i class="fas fa-home"></i>
+                        <h3>Centre de Tratament</h3>
+                        <ul>
+                            <li>Centre de tratament rezidențial</li>
+                            <li>Programe de zi</li>
+                            <li>Servicii de urgență</li>
+                            <li>Suport pentru familii</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-container">
+            <div class="info-section">
+                <h2 class="centered-title">Grupuri de Suport</h2>
+                <div class="effects-container">
+                    <div class="effect-box">
+                        <i class="fas fa-users"></i>
+                        <h3>Grupuri de Suport București</h3>
+                        <ul>
+                            <li>Grupul "Speranța" - Luni și Joi, 18:00-20:00</li>
+                            <li>Grupul "Noua Viață" - Marți și Vineri, 17:00-19:00</li>
+                            <li>Grupul "Împreună" - Miercuri, 16:00-18:00</li>
+                        </ul>
+                        <p><strong>Locație:</strong> Centrul de Consiliere București</p>
+                        <p><strong>Contact:</strong> 021 456 7890</p>
+                    </div>
+
+                    <div class="effect-box">
+                        <i class="fas fa-users"></i>
+                        <h3>Grupuri de Suport Brașov</h3>
+                        <ul>
+                            <li>Grupul "Drumul Nou" - Luni și Joi, 17:00-19:00</li>
+                            <li>Grupul "Alături" - Marți și Vineri, 18:00-20:00</li>
+                        </ul>
+                        <p><strong>Locație:</strong> Centrul de Consiliere Brașov</p>
+                        <p><strong>Contact:</strong> 0268 345 678</p>
+                    </div>
+
+                    <div class="effect-box">
+                        <i class="fas fa-users"></i>
+                        <h3>Grupuri de Suport Craiova</h3>
+                        <ul>
+                            <li>Grupul "Înainte" - Luni și Miercuri, 16:00-18:00</li>
+                            <li>Grupul "Sprijin" - Marți și Joi, 17:00-19:00</li>
+                        </ul>
+                        <p><strong>Locație:</strong> Centrul de Consiliere Craiova</p>
+                        <p><strong>Contact:</strong> 0251 678 901</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-container">
+            <div class="info-section">
+                <h2 class="centered-title">Centre de Ajutor în România</h2>
+                <div class="filter-buttons" style="margin-bottom: 20px; text-align: center;">
+                    <button class="filter-btn active" data-type="all">Toate Centrele</button>
+                    <button class="filter-btn" data-type="hospital">Spitale</button>
+                    <button class="filter-btn" data-type="prevention">Centre de Prevenire</button>
+                    <button class="filter-btn" data-type="clinic">Clinici Private</button>
+                </div>
+                <div id="map" style="height: 400px; width: 100%; border-radius: 10px; margin: 20px 0;"></div>
+                <div class="help-box">
+                    <p>Pe hartă sunt marcate principalele centre de ajutor și reabilitare din România. 
+                       Faceți click pe marcaje pentru mai multe informații despre fiecare centru.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Viața, nu Drogurile. Toate drepturile rezervate.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Inițializare hartă centrată pe România
+        var map = L.map('map').setView([45.9432, 24.9668], 7);
+        
+        // Adăugare layer OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Definire iconițe personalizate pentru fiecare tip de centru
+        var hospitalIcon = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        var preventionIcon = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        var clinicIcon = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        // Centre de ajutor din România
+        var centres = [
+            {
+                name: "Centrul de Prevenire, Evaluare și Consiliere Antidrog Vrancea",
+                coords: [45.6965, 27.1862],
+                address: "Focșani, Județul Vrancea",
+                schedule: "Luni-Vineri: 8:00-16:00",
+                phone: "0237 xxx xxx",
+                description: "Servicii de prevenire, evaluare și consiliere pentru persoanele afectate de consumul de alcool și droguri"
+            },
+            {
+                name: "Spitalul de Psihiatrie Cronici Dumbrăveni",
+                coords: [45.7769, 27.0647],
+                address: "Strada Principală, Nr. 100, Dumbrăveni, Județul Vrancea",
+                schedule: "Non-Stop",
+                phone: "0237 xxx xxx",
+                description: "Tratamente pentru dependența de alcool și alte substanțe, servicii de psihiatrie pentru recuperare"
+            },
+            {
+                name: "Spitalul Județean de Urgență Sf. Pantelimon Focșani",
+                coords: [45.6965, 27.1862],
+                address: "Strada Călăreților, Nr. 4, Focșani, Județul Vrancea",
+                schedule: "Non-Stop",
+                phone: "0237 xxx xxx",
+                description: "Servicii de urgență și tratamente pentru dependența de alcool și alte substanțe"
+            },
+            {
+                name: "Centrul de Prevenire, Evaluare și Consiliere Antidrog Vaslui",
+                coords: [46.6403, 27.7272],
+                address: "Strada Republicii, Nr. 40, Vaslui",
+                schedule: "Luni-Vineri: 8:00-16:00",
+                phone: "0235 xxx xxx",
+                description: "Servicii de prevenire, evaluare și consiliere pentru persoanele afectate"
+            },
+            {
+                name: "Spitalul de Psihiatrie Murgeni",
+                coords: [46.2006, 28.0157],
+                address: "Strada Ștefan Cel Mare, Nr. 32, Murgeni, Județul Vaslui",
+                schedule: "Non-Stop",
+                phone: "0235 xxx xxx",
+                description: "Tratamente pentru dependența de alcool și alte substanțe"
+            },
+            {
+                name: "Centrul Medical Laura Cătană",
+                coords: [45.1047, 24.3669],
+                address: "Râmnicu Vâlcea, Județul Vâlcea",
+                schedule: "Luni-Vineri: 9:00-17:00",
+                phone: "0250 xxx xxx",
+                description: "Tratamente pentru dezalcoolizare și dezintoxicare, consiliere psihologică"
+            },
+            {
+                name: "BalneoMed Center",
+                coords: [45.1047, 24.3669],
+                address: "Râmnicu Vâlcea, Județul Vâlcea",
+                schedule: "Luni-Vineri: 8:00-20:00",
+                phone: "0250 xxx xxx",
+                description: "Servicii de recuperare medicală pentru dependența de alcool și droguri"
+            },
+            {
+                name: "Spitalul de Psihiatrie Drăgoești",
+                coords: [44.9167, 24.2333],
+                address: "Drăgoești, Județul Vâlcea",
+                schedule: "Non-Stop",
+                phone: "0250 xxx xxx",
+                description: "Tratamente pentru dependența de alcool și alte substanțe"
+            },
+            {
+                name: "Centrul de Recuperare și Reabilitare Neuropsihiatrică Tulcea",
+                coords: [45.1767, 28.8018],
+                address: "Strada 1 Mai, Nr. 23, Tulcea",
+                schedule: "Non-Stop",
+                phone: "0240 xxx xxx",
+                description: "Servicii de recuperare și tratament pentru dependența de alcool și alte substanțe"
+            },
+            {
+                name: "Spitalul Județean de Urgență Tulcea",
+                coords: [45.1767, 28.8018],
+                address: "Strada 9 Mai, Nr. 27, Tulcea",
+                schedule: "Non-Stop",
+                phone: "0240 xxx xxx",
+                description: "Tratamente pentru dependența de alcool și alte substanțe"
+            },
+            // Locații noi adăugate de pe pagina 2
+            {
+                name: "Spitalul de Psihiatrie Săpunari",
+                coords: [44.2333, 26.6167],
+                address: "Comuna Lehliu-Gară, Județul Călărași",
+                schedule: "Non-Stop",
+                phone: "0242 xxx xxx",
+                description: "Tratamente specializate pentru dependențe și recuperare"
+            },
+            {
+                name: "Centrul de Prevenire Călărași",
+                coords: [44.2, 27.3333],
+                address: "Călărași, Județul Călărași",
+                schedule: "Luni-Vineri: 8:00-16:00",
+                phone: "0242 xxx xxx",
+                description: "Servicii de prevenire și consiliere antidrog"
+            },
+            {
+                name: "Spitalul Clinic de Psihiatrie Prof. Dr. Alexandru Obregia",
+                coords: [44.3972, 26.1026],
+                address: "Șoseaua Berceni 10, București",
+                schedule: "Non-Stop",
+                phone: "021 xxx xxx",
+                description: "Cel mai mare spital de psihiatrie din România, cu secție specializată pentru tratamentul adicțiilor"
+            },
+            {
+                name: "Centrul de Evaluare și Tratament al Toxicodependențelor pentru Tineri București",
+                coords: [44.4377, 26.0974],
+                address: "București, Sector 3",
+                schedule: "Luni-Vineri: 8:00-16:00",
+                phone: "021 xxx xxx",
+                description: "Centru specializat pentru tineri cu probleme de dependență"
+            },
+            {
+                name: "Spitalul de Psihiatrie Titan Dr. Constantin Gorgos",
+                coords: [44.4167, 26.1667],
+                address: "București, Sector 3",
+                schedule: "Non-Stop",
+                phone: "021 xxx xxx",
+                description: "Servicii complete de psihiatrie și tratament pentru dependențe"
+            },
+            // Locații de pe paginile 3-5
+            {
+                name: "Spitalul de Psihiatrie Nucet",
+                coords: [46.6333, 22.1500],
+                address: "Nucet, Județul Bihor",
+                schedule: "Non-Stop",
+                phone: "0259 xxx xxx",
+                description: "Centru specializat în tratamentul dependențelor și reabilitare"
+            },
+            {
+                name: "Centrul de Prevenire Bihor",
+                coords: [47.0722, 21.9181],
+                address: "Oradea, Județul Bihor",
+                schedule: "Luni-Vineri: 8:00-16:00",
+                phone: "0259 xxx xxx",
+                description: "Servicii de prevenire și consiliere pentru dependențe"
+            },
+            {
+                name: "Spitalul de Psihiatrie și pentru Măsuri de Siguranță Ștei",
+                coords: [46.5333, 22.4833],
+                address: "Ștei, Județul Bihor",
+                schedule: "Non-Stop",
+                phone: "0259 xxx xxx",
+                description: "Tratament specializat pentru adicții și recuperare"
+            },
+            {
+                name: "Spitalul de Psihiatrie Dr. Gheorghe Preda Sibiu",
+                coords: [45.7971, 24.1471],
+                address: "Sibiu, Județul Sibiu",
+                schedule: "Non-Stop",
+                phone: "0269 xxx xxx",
+                description: "Servicii complete de psihiatrie și tratamentul dependențelor"
+            },
+            {
+                name: "Centrul de Prevenire Sibiu",
+                coords: [45.7971, 24.1471],
+                address: "Sibiu, Județul Sibiu",
+                schedule: "Luni-Vineri: 8:00-16:00",
+                phone: "0269 xxx xxx",
+                description: "Servicii de prevenire și consiliere antidrog"
+            },
+            {
+                name: "Spitalul de Psihiatrie Cronici Siret",
+                coords: [47.9500, 26.0667],
+                address: "Siret, Județul Suceava",
+                schedule: "Non-Stop",
+                phone: "0230 xxx xxx",
+                description: "Tratament și recuperare pentru dependențe"
+            },
+            {
+                name: "Centrul de Prevenire Suceava",
+                coords: [47.6333, 26.2500],
+                address: "Suceava, Județul Suceava",
+                schedule: "Luni-Vineri: 8:00-16:00",
+                phone: "0230 xxx xxx",
+                description: "Servicii de prevenire și consiliere pentru adicții"
+            },
+            {
+                name: "Spitalul Clinic de Psihiatrie Socola Iași",
+                coords: [47.1585, 27.6014],
+                address: "Șoseaua Bucium 36, Iași",
+                schedule: "Non-Stop",
+                phone: "0232 xxx xxx",
+                description: "Centru universitar cu expertiză în tratamentul adicțiilor"
+            },
+            {
+                name: "Centrul de Prevenire Iași",
+                coords: [47.1585, 27.6014],
+                address: "Iași, Județul Iași",
+                schedule: "Luni-Vineri: 8:00-16:00",
+                phone: "0232 xxx xxx",
+                description: "Servicii de prevenire și consiliere antidrog"
+            },
+            {
+                name: "Spitalul de Psihiatrie Câmpulung Moldovenesc",
+                coords: [47.5333, 25.5667],
+                address: "Câmpulung Moldovenesc, Județul Suceava",
+                schedule: "Non-Stop",
+                phone: "0230 xxx xxx",
+                description: "Tratament specializat pentru dependențe"
+            },
+            {
+                name: "Spitalul de Psihiatrie Voila",
+                coords: [45.1333, 25.7333],
+                address: "Câmpina, Județul Prahova",
+                schedule: "Non-Stop",
+                phone: "0244 xxx xxx",
+                description: "Servicii complete de tratare a dependențelor"
+            },
+            {
+                name: "Centrul de Prevenire Prahova",
+                coords: [44.9333, 26.0167],
+                address: "Ploiești, Județul Prahova",
+                schedule: "Luni-Vineri: 8:00-16:00",
+                phone: "0244 xxx xxx",
+                description: "Servicii de prevenire și consiliere"
+            },
+            {
+                name: "Spitalul de Psihiatrie Săpoca",
+                coords: [45.1833, 26.7500],
+                address: "Săpoca, Județul Buzău",
+                schedule: "Non-Stop",
+                phone: "0238 xxx xxx",
+                description: "Centru specializat în tratamentul adicțiilor"
+            },
+            {
+                name: "Centrul de Prevenire Buzău",
+                coords: [45.1500, 26.8167],
+                address: "Buzău, Județul Buzău",
+                schedule: "Luni-Vineri: 8:00-16:00",
+                phone: "0238 xxx xxx",
+                description: "Servicii de prevenire și consiliere antidrog"
+            }
+        ];
+
+        // Adăugare markere pentru centre cu popup-uri detaliate
+        var markers = [];
+        centres.forEach(function(centre) {
+            // Alegere icon în funcție de tipul centrului
+            var icon;
+            var type;
+            if (centre.name.toLowerCase().includes('spital')) {
+                icon = hospitalIcon;
+                type = 'hospital';
+            } else if (centre.name.toLowerCase().includes('centrul de prevenire') || 
+                      centre.name.toLowerCase().includes('centrul de evaluare')) {
+                icon = preventionIcon;
+                type = 'prevention';
+            } else {
+                icon = clinicIcon;
+                type = 'clinic';
+            }
+
+            var popupContent = 
+                '<div style="min-width: 200px;">' +
+                '<h3 style="color: #4CAF50; margin-bottom: 8px;">' + centre.name + '</h3>' +
+                '<p><strong>Adresa:</strong> ' + centre.address + '</p>' +
+                '<p><strong>Program:</strong> ' + centre.schedule + '</p>' +
+                '<p><strong>Telefon:</strong> ' + centre.phone + '</p>' +
+                '<p><strong>Servicii:</strong> ' + centre.description + '</p>' +
+                '</div>';
+            
+            var marker = L.marker(centre.coords, {icon: icon})
+                .bindPopup(popupContent)
+                .addTo(map);
+            
+            marker.type = type;
+            markers.push(marker);
+        });
+
+        // Adăugare funcționalitate pentru butoanele de filtrare
+        document.querySelectorAll('.filter-btn').forEach(function(button) {
+            button.addEventListener('click', function() {
+                // Actualizare stare butoane
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                // Filtrare markere
+                var selectedType = this.getAttribute('data-type');
+                markers.forEach(function(marker) {
+                    if (selectedType === 'all' || marker.type === selectedType) {
+                        marker.addTo(map);
+                    } else {
+                        marker.remove();
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        .filter-btn {
+            padding: 8px 16px;
+            margin: 0 5px;
+            border: 2px solid #4CAF50;
+            background-color: white;
+            color: #4CAF50;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .filter-btn.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</body>
+</html> 

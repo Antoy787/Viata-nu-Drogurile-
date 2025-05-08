@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viața, nu Drogurile - Acasă</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <h1><i class="fas fa-cannabis"></i> Viața, nu Drogurile</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Acasă</a></li>
+                <li><a href="despre.html">Despre</a></li>
+                <li><a href="informatii.html">Informații</a></li>
+                <li><a href="resurse.html">Resurse</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Alege Viața</h2>
+                <p>Alege viața, pentru că nicio doză nu valorează cât o zi trăită cu adevărat.</p>
+                <button id="showFeatures" class="cta-button">Află De Ce</button>
+            </div>
+        </section>
+
+        <section id="features" class="features hidden">
+            <h2>De ce să alegi viața?</h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Sănătate</h3>
+                    <p>Descoperă beneficiile unui stil de viață sănătos</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Dezvoltare Personală</h3>
+                    <p>Împlinește-ți potențialul prin activități constructive</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>Comunitate</h3>
+                    <p>Conectează-te cu alții care împărtășesc aceleași valori</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-container">
+            <div class="info-section">
+                <h2 class="centered-title">Statistici și Impact</h2>
+                <div class="effects-container">
+                    <div class="effect-box">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Statistici Globale</h3>
+                        <ul>
+                            <li>Peste 35 milioane de persoane suferă de dependențe</li>
+                            <li>11 milioane de persoane injectează droguri</li>
+                            <li>1.4 milioane de persoane tratează HIV din cauza injectărilor</li>
+                            <li>Peste 500,000 de decese anuale din cauza drogurilor</li>
+                        </ul>
+                    </div>
+
+                    <div class="effect-box">
+                        <i class="fas fa-brain"></i>
+                        <h3>Impact asupra Sănătății</h3>
+                        <ul>
+                            <li>Modificări permanente în structura creierului</li>
+                            <li>Risc crescut de boli mentale</li>
+                            <li>Probleme cardiovasculare severe</li>
+                            <li>Deteriorarea sistemului imunitar</li>
+                        </ul>
+                    </div>
+
+                    <div class="effect-box">
+                        <i class="fas fa-users"></i>
+                        <h3>Impact Social</h3>
+                        <ul>
+                            <li>Deteriorarea relațiilor familiale</li>
+                            <li>Probleme la locul de muncă</li>
+                            <li>Izolare socială</li>
+                            <li>Dificultăți financiare</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="success-stories">
+            <h2 class="centered-title">Povești de Succes în Recuperare</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"După 8 ani de dependență de heroină, am reușit să-mi reconstruiesc viața. Astăzi sunt consilier în recuperare și ajut alții să-și găsească calea spre o viață curată. Fiecare zi este o victorie."</p>
+                    <div class="testimonial-author">- Alexandru R.</div>
+                </div>
+                <div class="testimonial">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Am fost dependent de droguri sintetice timp de 6 ani. Recuperarea a fost grea, dar cu ajutorul familiei și al unui program de tratament, am reușit să devin un părinte mai bun și să-mi găsesc un loc de muncă stabil."</p>
+                    <div class="testimonial-author">- Elena M.</div>
+                </div>
+                <div class="testimonial">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"După ce am pierdut totul din cauza dependenței de droguri, am decis să-mi schimb viața. Acum, după 3 ani de abstinență, am terminat facultatea și lucrez ca asistent social, ajutând tinerii să evite capcanele drogurilor."</p>
+                    <div class="testimonial-author">- Cristian D.</div>
+                </div>
+            </div>
+
+            <div class="quote-generator">
+                <h3>Motivație pentru Recuperare</h3>
+                <div class="quote-box">
+                    <p id="quote-text">"Fiecare zi curată este o victorie în lupta cu dependența."</p>
+                    <button id="new-quote" class="cta-button">Generează Citat Nou</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Viața, nu Drogurile. Toate drepturile rezervate.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
